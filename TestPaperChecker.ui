@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>796</width>
+    <width>808</width>
     <height>560</height>
    </rect>
   </property>
@@ -492,7 +492,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="1" colspan="2">
-         <widget class="QTextEdit" name="textEdit">
+         <widget class="QTextEdit" name="TestPaperNameInputField">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -508,7 +508,7 @@
          </widget>
         </item>
         <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="TestPaperNameBtn">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -951,7 +951,7 @@
          </widget>
         </item>
         <item row="1" column="0" colspan="3">
-         <widget class="QFrame" name="frame">
+         <widget class="QFrame" name="CheckPaperFrame">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
@@ -960,7 +960,7 @@
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QFrame" name="frame_2">
+            <widget class="QFrame" name="UploadImageFrame">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -969,7 +969,7 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_2">
               <item alignment="Qt::AlignHCenter">
-               <widget class="QLabel" name="label_2">
+               <widget class="QLabel" name="UploadedImage">
                 <property name="minimumSize">
                  <size>
                   <width>350</width>
@@ -1406,15 +1406,21 @@
                </widget>
               </item>
               <item alignment="Qt::AlignHCenter">
-               <widget class="QPushButton" name="pushButton_2">
+               <widget class="QPushButton" name="UploadImageBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>200</width>
+                  <height>0</height>
+                 </size>
+                </property>
                 <property name="maximumSize">
                  <size>
-                  <width>100</width>
+                  <width>200</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
-                 <string>PushButton</string>
+                 <string>Upload Image</string>
                 </property>
                </widget>
               </item>
@@ -1422,7 +1428,7 @@
             </widget>
            </item>
            <item alignment="Qt::AlignHCenter">
-            <widget class="QFrame" name="frame_3">
+            <widget class="QFrame" name="CheckedImageFrame">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -1431,33 +1437,45 @@
              </property>
              <layout class="QGridLayout" name="gridLayout_2">
               <item row="1" column="0" alignment="Qt::AlignRight">
-               <widget class="QPushButton" name="pushButton_3">
+               <widget class="QPushButton" name="AdvancedBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>160</width>
+                  <height>0</height>
+                 </size>
+                </property>
                 <property name="maximumSize">
                  <size>
-                  <width>100</width>
+                  <width>250</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
-                 <string>PushButton</string>
+                 <string>Advanced</string>
                 </property>
                </widget>
               </item>
               <item row="1" column="1" alignment="Qt::AlignLeft">
-               <widget class="QPushButton" name="pushButton_4">
+               <widget class="QPushButton" name="SaveImageBtn">
+                <property name="minimumSize">
+                 <size>
+                  <width>160</width>
+                  <height>0</height>
+                 </size>
+                </property>
                 <property name="maximumSize">
                  <size>
-                  <width>100</width>
+                  <width>150</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
-                 <string>PushButton</string>
+                 <string>Save Image</string>
                 </property>
                </widget>
               </item>
               <item row="0" column="0" colspan="2">
-               <widget class="QLabel" name="label_3">
+               <widget class="QLabel" name="CheckedImage">
                 <property name="minimumSize">
                  <size>
                   <width>350</width>
