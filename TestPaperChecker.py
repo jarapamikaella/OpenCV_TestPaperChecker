@@ -188,7 +188,7 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.ConfirmTestPaperKeyName = QtWidgets.QPushButton(self.CheckPaperTab)
         self.ConfirmTestPaperKeyName.setObjectName("ConfirmTestPaperKeyName")
-        self.gridLayout.addWidget(self.ConfirmTestPaperKeyName, 0, 2, 1, 1)
+        self.gridLayout.addWidget(self.ConfirmTestPaperKeyName, 0, 3, 1, 1)
         self.CheckPaperFrame = QtWidgets.QFrame(self.CheckPaperTab)
         self.CheckPaperFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.CheckPaperFrame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -346,10 +346,10 @@ class Ui_MainWindow(object):
         self.UploadedImage.setObjectName("UploadedImage")
         self.gridLayout_3.addWidget(self.UploadedImage, 0, 0, 1, 1)
         self.UploadImageBtn = QtWidgets.QPushButton(self.UploadImageFrame)
-        self.UploadImageBtn.setMinimumSize(QtCore.QSize(200, 0))
-        self.UploadImageBtn.setMaximumSize(QtCore.QSize(200, 16777215))
+        self.UploadImageBtn.setMinimumSize(QtCore.QSize(160, 0))
+        self.UploadImageBtn.setMaximumSize(QtCore.QSize(150, 16777215))
         self.UploadImageBtn.setObjectName("UploadImageBtn")
-        self.gridLayout_3.addWidget(self.UploadImageBtn, 1, 0, 1, 1, QtCore.Qt.AlignHCenter)
+        self.gridLayout_3.addWidget(self.UploadImageBtn, 1, 0, 1, 1, QtCore.Qt.AlignLeft)
         self.pushButton = QtWidgets.QPushButton(self.UploadImageFrame)
         self.pushButton.setMinimumSize(QtCore.QSize(160, 0))
         self.pushButton.setMaximumSize(QtCore.QSize(150, 16777215))
@@ -526,7 +526,7 @@ class Ui_MainWindow(object):
         self.CheckedImage.setObjectName("CheckedImage")
         self.gridLayout_2.addWidget(self.CheckedImage, 0, 0, 1, 2)
         self.horizontalLayout.addWidget(self.CheckedImageFrame, 0, QtCore.Qt.AlignHCenter)
-        self.gridLayout.addWidget(self.CheckPaperFrame, 1, 0, 1, 3)
+        self.gridLayout.addWidget(self.CheckPaperFrame, 1, 0, 1, 4)
         self.SelectTestPaperKeyLabel = QtWidgets.QLabel(self.CheckPaperTab)
         font = QtGui.QFont()
         font.setPointSize(11)
@@ -559,6 +559,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
         self.UploadImageBtn.clicked.connect(self.uploadFile)
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Test Paper Checker"))
