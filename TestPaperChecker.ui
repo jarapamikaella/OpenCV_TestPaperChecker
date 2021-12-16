@@ -953,22 +953,41 @@
                 </property>
                </widget>
               </item>
-              <item row="1" column="0" alignment="Qt::AlignHCenter">
-               <widget class="QPushButton" name="UploadImageBtn">
+              <item row="1" column="1" alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="pushButton">
                 <property name="minimumSize">
                  <size>
-                  <width>200</width>
+                  <width>160</width>
                   <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>200</width>
+                  <width>150</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
-                 <string>Upload Image</string>
+                 <string>Check/Scan</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" alignment="Qt::AlignLeft">
+               <widget class="QPushButton" name="pushButton_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>160</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>250</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Discard</string>
                 </property>
                </widget>
               </item>
@@ -984,8 +1003,11 @@
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QGridLayout" name="gridLayout_2">
-              <item row="1" column="0" alignment="Qt::AlignRight">
+              <item row="1" column="0" alignment="Qt::AlignLeft">
                <widget class="QPushButton" name="AdvancedBtn">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
                 <property name="minimumSize">
                  <size>
                   <width>160</width>
@@ -1003,8 +1025,11 @@
                 </property>
                </widget>
               </item>
-              <item row="1" column="1" alignment="Qt::AlignLeft">
+              <item row="1" column="1" alignment="Qt::AlignRight">
                <widget class="QPushButton" name="SaveImageBtn">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
                 <property name="minimumSize">
                  <size>
                   <width>160</width>
