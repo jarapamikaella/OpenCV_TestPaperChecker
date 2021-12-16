@@ -491,14 +491,14 @@
         <string>     Check Paper     </string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="2">
+        <item row="0" column="3">
          <widget class="QPushButton" name="ConfirmTestPaperKeyName">
           <property name="text">
            <string>Confirm</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0" colspan="3">
+        <item row="1" column="0" colspan="4">
          <widget class="QFrame" name="CheckPaperFrame">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
