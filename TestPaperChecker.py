@@ -544,8 +544,7 @@ class Ui_MainWindow(object):
         self.MainTabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.image = QPixmap("testPaper1.png")
-        self.UploadedImage.setPixmap(self.image)
+        self.UploadImageBtn.clicked.connect(self.uploadFile)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -563,6 +562,10 @@ class Ui_MainWindow(object):
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.AnswerKeyTab), _translate("MainWindow", "     Answer Keys     "))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.AboutTab), _translate("MainWindow", "     Item Analysis     "))
 
+    def uploadFile(self):
+        self.image = QPixmap("testPaper1.png")
+        self.UploadedImage.setPixmap(self.image)
+        self.UploadImageBtn.hide()
 
 if __name__ == "__main__":
     import sys
