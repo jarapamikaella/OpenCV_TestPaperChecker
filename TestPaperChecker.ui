@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -9,6 +12,12 @@
     <width>808</width>
     <height>560</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -486,27 +495,213 @@
         <height>16</height>
        </size>
       </property>
+      <widget class="QWidget" name="AnswerKeyTab">
+       <attribute name="title">
+        <string>     Answer Keys     </string>
+       </attribute>
+       <widget class="QLabel" name="TestNameLbl">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Test Paper Name:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="TestNameInp">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>30</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QFrame" name="AnsKeyTblFrame">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>10</y>
+          <width>211</width>
+          <height>421</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QTableWidget" name="AnsKeyTbl">
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="showGrid">
+            <bool>true</bool>
+           </property>
+           <row>
+            <property name="text">
+             <string>Item 1</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>Item 2</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>Item 3</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>Item 4</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>Item 5</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>Item 6</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>Item 7</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>Item 8</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>Item 9</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>Item 10</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>Correct Answer</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>430</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="gridLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>120</y>
+          <width>491</width>
+          <height>251</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="TestBtnGrid">
+         <item row="2" column="1" alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="Test6Plchldr">
+           <property name="text">
+            <string>Test Paper 6</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="Test5Plchldr">
+           <property name="text">
+            <string>Test Paper 5</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="Test7Plchldr">
+           <property name="text">
+            <string>Test Paper 7</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1" alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="Test8Plchldr">
+           <property name="text">
+            <string>Test Paper 8</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="Test1Plchldr">
+           <property name="text">
+            <string>Test Paper 1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="Test4Plchldr">
+           <property name="text">
+            <string>Test Paper 4</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="Test2Plchldr">
+           <property name="text">
+            <string>Test Paper 2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="Test3Plchldr">
+           <property name="text">
+            <string>Test Paper 3</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="AddTestBtn">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>30</y>
+          <width>93</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </widget>
       <widget class="QWidget" name="CheckPaperTab">
        <attribute name="title">
         <string>     Check Paper     </string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="1" colspan="2">
-         <widget class="QTextEdit" name="TestPaperNameInputField">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>30</height>
-           </size>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
          <widget class="QPushButton" name="TestPaperNameBtn">
           <property name="maximumSize">
@@ -950,7 +1145,7 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="0" colspan="3">
+        <item row="1" column="0" colspan="2">
          <widget class="QFrame" name="CheckPaperFrame">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -1917,12 +2112,10 @@
           </layout>
          </widget>
         </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboBox"/>
+        </item>
        </layout>
-      </widget>
-      <widget class="QWidget" name="AnswerKeyTab">
-       <attribute name="title">
-        <string>     Answer Keys     </string>
-       </attribute>
       </widget>
       <widget class="QWidget" name="AboutTab">
        <attribute name="title">
@@ -1934,6 +2127,25 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>MainTabWidget</tabstop>
+  <tabstop>TestNameInp</tabstop>
+  <tabstop>AddTestBtn</tabstop>
+  <tabstop>Test1Plchldr</tabstop>
+  <tabstop>Test2Plchldr</tabstop>
+  <tabstop>Test3Plchldr</tabstop>
+  <tabstop>Test4Plchldr</tabstop>
+  <tabstop>Test5Plchldr</tabstop>
+  <tabstop>Test6Plchldr</tabstop>
+  <tabstop>Test7Plchldr</tabstop>
+  <tabstop>Test8Plchldr</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>TestPaperNameBtn</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>UploadImageBtn</tabstop>
+  <tabstop>AdvancedBtn</tabstop>
+  <tabstop>SaveImageBtn</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
