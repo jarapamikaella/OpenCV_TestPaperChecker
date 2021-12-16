@@ -14,7 +14,7 @@ from PyQt5.QtGui import QPixmap
 class Ui_TEST_PAPER_CHECKER(object):
     def setupUi(self, TEST_PAPER_CHECKER):
         TEST_PAPER_CHECKER.setObjectName("TEST_PAPER_CHECKER")
-        TEST_PAPER_CHECKER.setFixedSize(QSize(850, 600))
+        TEST_PAPER_CHECKER.setFixedSize(QSize(800, 600))
         self.centralwidget = QtWidgets.QWidget(TEST_PAPER_CHECKER)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
@@ -155,8 +155,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.centralwidget.setPalette(palette)
         self.centralwidget.setAutoFillBackground(True)
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout.setObjectName("verticalLayout")
+        self.gridLayout_6 = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout_6.setObjectName("gridLayout_6")
         self.label = QtWidgets.QLabel(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -171,7 +171,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
+        self.gridLayout_6.addWidget(self.label, 0, 0, 1, 1)
         self.MainTabWidget = QtWidgets.QTabWidget(self.centralwidget)
         self.MainTabWidget.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
@@ -199,7 +199,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.gridLayout_3 = QtWidgets.QGridLayout(self.UploadImageFrame)
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.UploadedImage = QtWidgets.QLabel(self.UploadImageFrame)
-        self.UploadedImage.setMinimumSize(QtCore.QSize(350, 0))
+        self.UploadedImage.setMinimumSize(QtCore.QSize(0, 0))
         self.UploadedImage.setMaximumSize(QtCore.QSize(16777215, 16777215))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
@@ -358,14 +358,14 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.stackedWidget.addWidget(self.page_4)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
-        self.gridLayout_4 = QtWidgets.QGridLayout(self.page_3)
-        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.page_3)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.DiscardBtn = QtWidgets.QPushButton(self.page_3)
         self.DiscardBtn.setObjectName("DiscardBtn")
-        self.gridLayout_4.addWidget(self.DiscardBtn, 0, 0, 1, 1)
+        self.horizontalLayout_5.addWidget(self.DiscardBtn)
         self.CheckScanBtn = QtWidgets.QPushButton(self.page_3)
         self.CheckScanBtn.setObjectName("CheckScanBtn")
-        self.gridLayout_4.addWidget(self.CheckScanBtn, 0, 1, 1, 1)
+        self.horizontalLayout_5.addWidget(self.CheckScanBtn)
         self.stackedWidget.addWidget(self.page_3)
         self.gridLayout_3.addWidget(self.stackedWidget, 1, 0, 1, 1)
         self.horizontalLayout.addWidget(self.UploadImageFrame)
@@ -376,8 +376,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.gridLayout_2 = QtWidgets.QGridLayout(self.CheckedImageFrame)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.CheckedImage = QtWidgets.QLabel(self.CheckedImageFrame)
-        self.CheckedImage.setMinimumSize(QtCore.QSize(350, 300))
-        self.CheckedImage.setMaximumSize(QtCore.QSize(16777215, 400))
+        self.CheckedImage.setMinimumSize(QtCore.QSize(0, 0))
+        self.CheckedImage.setMaximumSize(QtCore.QSize(16777215, 16777215))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -524,20 +524,20 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.gridLayout_5 = QtWidgets.QGridLayout(self.frame)
-        self.gridLayout_5.setObjectName("gridLayout_5")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.AdvancedBtn = QtWidgets.QPushButton(self.frame)
         self.AdvancedBtn.setEnabled(False)
         self.AdvancedBtn.setMinimumSize(QtCore.QSize(160, 0))
         self.AdvancedBtn.setMaximumSize(QtCore.QSize(250, 16777215))
         self.AdvancedBtn.setObjectName("AdvancedBtn")
-        self.gridLayout_5.addWidget(self.AdvancedBtn, 0, 0, 1, 1)
+        self.horizontalLayout_4.addWidget(self.AdvancedBtn)
         self.SaveImageBtn = QtWidgets.QPushButton(self.frame)
         self.SaveImageBtn.setEnabled(False)
         self.SaveImageBtn.setMinimumSize(QtCore.QSize(160, 0))
         self.SaveImageBtn.setMaximumSize(QtCore.QSize(150, 16777215))
         self.SaveImageBtn.setObjectName("SaveImageBtn")
-        self.gridLayout_5.addWidget(self.SaveImageBtn, 0, 1, 1, 1)
+        self.horizontalLayout_4.addWidget(self.SaveImageBtn)
         self.gridLayout_2.addWidget(self.frame, 1, 0, 1, 1)
         self.horizontalLayout.addWidget(self.CheckedImageFrame, 0, QtCore.Qt.AlignHCenter)
         self.gridLayout.addWidget(self.CheckPaperFrame, 1, 0, 1, 4)
@@ -557,8 +557,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.SelectTestPaperKeyLabel.setObjectName("SelectTestPaperKeyLabel")
         self.horizontalLayout_3.addWidget(self.SelectTestPaperKeyLabel)
         self.TestPaperNameDropdown = QtWidgets.QComboBox(self.HeaderFrame)
-        self.TestPaperNameDropdown.setMinimumSize(QtCore.QSize(500, 0))
-        self.TestPaperNameDropdown.setMaximumSize(QtCore.QSize(500, 16777215))
+        self.TestPaperNameDropdown.setMinimumSize(QtCore.QSize(450, 0))
+        self.TestPaperNameDropdown.setMaximumSize(QtCore.QSize(450, 16777215))
         self.TestPaperNameDropdown.setObjectName("TestPaperNameDropdown")
         self.TestPaperNameDropdown.addItem("")
         self.TestPaperNameDropdown.addItem("")
@@ -575,7 +575,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.AboutTab = QtWidgets.QWidget()
         self.AboutTab.setObjectName("AboutTab")
         self.MainTabWidget.addTab(self.AboutTab, "")
-        self.verticalLayout.addWidget(self.MainTabWidget)
+        self.gridLayout_6.addWidget(self.MainTabWidget, 1, 0, 1, 1)
         TEST_PAPER_CHECKER.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(TEST_PAPER_CHECKER)
@@ -583,9 +583,10 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(TEST_PAPER_CHECKER)
 
-        self.UploadImageBtn.clicked.connect(self.uploadFile)
-        self.DiscardBtn.clicked.connect(self.discardFile)
-
+        self.UploadImageBtn.clicked.connect(self.uploadImage)
+        self.DiscardBtn.clicked.connect(self.discardImage)
+        self.CheckScanBtn.clicked.connect(self.check_Scan_Image)
+    
     def retranslateUi(self, TEST_PAPER_CHECKER):
         _translate = QtCore.QCoreApplication.translate
         TEST_PAPER_CHECKER.setWindowTitle(_translate("TEST_PAPER_CHECKER", "MainWindow"))
@@ -604,14 +605,20 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.AnswerKeyTab), _translate("TEST_PAPER_CHECKER", "     Answer Keys     "))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.AboutTab), _translate("TEST_PAPER_CHECKER", "     Item Analysis     "))
 
-    def uploadFile(self):
+    def uploadImage(self):
         self.stackedWidget.setCurrentIndex(1)
         self.image = QPixmap("testPaper1.png")
         self.UploadedImage.setPixmap(self.image)
 
-    def discardFile(self):
+    def discardImage(self):
         self.stackedWidget.setCurrentIndex(0)
         self.UploadedImage.clear()
+    
+    def check_Scan_Image(self):
+        self.image = QPixmap("testPaper1.png")
+        self.CheckedImage.setPixmap(self.image)
+        self.AdvancedBtn.setEnabled(True)
+        self.SaveImageBtn.setEnabled(True)
 
 if __name__ == "__main__":
     import sys
