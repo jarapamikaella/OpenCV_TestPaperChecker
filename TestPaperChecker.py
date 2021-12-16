@@ -12,6 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QPixmap
 
 class Ui_MainWindow(object):
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setFixedSize(QSize(800, 600))
@@ -349,19 +350,19 @@ class Ui_MainWindow(object):
         self.UploadImageBtn.setMinimumSize(QtCore.QSize(160, 0))
         self.UploadImageBtn.setMaximumSize(QtCore.QSize(150, 16777215))
         self.UploadImageBtn.setObjectName("UploadImageBtn")
-        self.gridLayout_3.addWidget(self.UploadImageBtn, 1, 0, 1, 1, QtCore.Qt.AlignLeft)
+        self.gridLayout_3.addWidget(self.UploadImageBtn, 1, 0, 1, 1, QtCore.Qt.AlignHCenter)
         self.pushButton = QtWidgets.QPushButton(self.UploadImageFrame)
         self.pushButton.setMinimumSize(QtCore.QSize(160, 0))
         self.pushButton.setMaximumSize(QtCore.QSize(150, 16777215))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.hide()
-        self.gridLayout_3.addWidget(self.pushButton, 1, 1, 1, 1, QtCore.Qt.AlignHCenter)
+        self.gridLayout_3.addWidget(self.pushButton, 1, 1, 1, 1)
+        self.pushButton.setHidden(True)
         self.pushButton_2 = QtWidgets.QPushButton(self.UploadImageFrame)
         self.pushButton_2.setMinimumSize(QtCore.QSize(160, 0))
         self.pushButton_2.setMaximumSize(QtCore.QSize(250, 16777215))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.hide()
-        self.gridLayout_3.addWidget(self.pushButton_2, 1, 0, 1, 1, QtCore.Qt.AlignLeft)
+        self.gridLayout_3.addWidget(self.pushButton_2, 1, 0, 1, 1)
+        self.pushButton_2.setHidden(True)
         self.horizontalLayout.addWidget(self.UploadImageFrame)
         self.CheckedImageFrame = QtWidgets.QFrame(self.CheckPaperFrame)
         self.CheckedImageFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -585,6 +586,7 @@ class Ui_MainWindow(object):
         self.pushButton.show()
         self.pushButton_2.show()
 
+        
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
