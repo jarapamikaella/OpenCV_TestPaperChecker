@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>TEST_PAPER_CHECKER</class>
+ <widget class="QMainWindow" name="TEST_PAPER_CHECKER">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -491,13 +491,6 @@
         <string>     Check Paper     </string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="3">
-         <widget class="QPushButton" name="ConfirmTestPaperKeyName">
-          <property name="text">
-           <string>Confirm</string>
-          </property>
-         </widget>
-        </item>
         <item row="1" column="0" colspan="4">
          <widget class="QFrame" name="CheckPaperFrame">
           <property name="frameShape">
@@ -953,42 +946,64 @@
                 </property>
                </widget>
               </item>
-              <item row="1" column="1">
-               <widget class="QPushButton" name="pushButton">
-                <property name="minimumSize">
-                 <size>
-                  <width>160</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>150</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>Check/Scan</string>
-                </property>
-               </widget>
-              </item>
               <item row="1" column="0">
-               <widget class="QPushButton" name="pushButton_2">
+               <widget class="QStackedWidget" name="stackedWidget">
                 <property name="minimumSize">
                  <size>
-                  <width>160</width>
+                  <width>0</width>
                   <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>250</width>
-                  <height>16777215</height>
+                  <width>16777215</width>
+                  <height>50</height>
                  </size>
                 </property>
-                <property name="text">
-                 <string>Discard</string>
+                <property name="currentIndex">
+                 <number>1</number>
                 </property>
+                <widget class="QWidget" name="page_4">
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <widget class="QPushButton" name="UploadImageBtn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>200</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Upload Image</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="page_3">
+                 <layout class="QGridLayout" name="gridLayout_4">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="DiscardBtn">
+                    <property name="text">
+                     <string>Discard</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="CheckScanBtn">
+                    <property name="text">
+                     <string>Check/Scan</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
                </widget>
               </item>
              </layout>
@@ -1003,62 +1018,18 @@
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QGridLayout" name="gridLayout_2">
-              <item row="1" column="0" alignment="Qt::AlignLeft">
-               <widget class="QPushButton" name="AdvancedBtn">
-                <property name="enabled">
-                 <bool>false</bool>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>160</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>250</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>Advanced</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1" alignment="Qt::AlignRight">
-               <widget class="QPushButton" name="SaveImageBtn">
-                <property name="enabled">
-                 <bool>false</bool>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>160</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>150</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>Save Image</string>
-                </property>
-               </widget>
-              </item>
               <item row="0" column="0" colspan="2">
                <widget class="QLabel" name="CheckedImage">
                 <property name="minimumSize">
                  <size>
                   <width>350</width>
-                  <height>0</height>
+                  <height>300</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>16777215</height>
+                  <height>400</height>
                  </size>
                 </property>
                 <property name="palette">
@@ -1484,56 +1455,137 @@
                 </property>
                </widget>
               </item>
+              <item row="1" column="0">
+               <widget class="QFrame" name="frame">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_5">
+                 <item row="0" column="0">
+                  <widget class="QPushButton" name="AdvancedBtn">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>160</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>250</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Advanced</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="SaveImageBtn">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>160</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Save Image</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
              </layout>
             </widget>
            </item>
           </layout>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="SelectTestPaperKeyLabel">
-          <property name="font">
-           <font>
-            <pointsize>11</pointsize>
-            <weight>75</weight>
-            <italic>false</italic>
-            <bold>true</bold>
-           </font>
+        <item row="0" column="0" colspan="4">
+         <widget class="QFrame" name="HeaderFrame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
           </property>
-          <property name="text">
-           <string>Select Test Paper Key:</string>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QComboBox" name="TestPaperNameDropdown">
-          <property name="minimumSize">
-           <size>
-            <width>400</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>Test Paper 1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Test Paper 2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Test Paper 3</string>
-           </property>
-          </item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="SelectTestPaperKeyLabel">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Select Test Paper Key:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="TestPaperNameDropdown">
+             <property name="minimumSize">
+              <size>
+               <width>500</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>500</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <item>
+              <property name="text">
+               <string>Test Paper 1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Test Paper 2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Test Paper 3</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="ConfirmTestPaperKeyName">
+             <property name="text">
+              <string>Confirm</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
