@@ -10,6 +10,7 @@
 from PyQt5.QtCore import  QSize
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QDialog, QFileDialog
 
 class Ui_TEST_PAPER_CHECKER(object):
     def setupUi(self, TEST_PAPER_CHECKER):
@@ -679,8 +680,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         TEST_PAPER_CHECKER.setTabOrder(self.UploadImageBtn, self.AdvancedBtn)
         TEST_PAPER_CHECKER.setTabOrder(self.AdvancedBtn, self.SaveImageBtn)
 
-        self.UploadImageBtn.clicked.connect(self.uploadImage)
-        self.DiscardBtn.clicked.connect(self.discardImage)
+        self.UploadImageBtn.clicked.connect(self.browsefiles) #on click function for upload
+        self.DiscardBtn.clicked.connect(self.discardImage)    #on click function for discard
         self.CheckScanBtn.clicked.connect(self.check_Scan_Image)
 
     def retranslateUi(self, TEST_PAPER_CHECKER):
@@ -734,11 +735,15 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.CheckPaperTab), _translate("TEST_PAPER_CHECKER", "     Check Paper     "))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.AboutTab), _translate("TEST_PAPER_CHECKER", "     Item Analysis     "))
 
-    def uploadImage(self):
-        self.stackedWidget.setCurrentIndex(1)
-        self.image = QPixmap("testPaper1.png")
+    #opens gallery to select and upload image   
+    def browsefiles(self): 
+        fname=QFileDialog.getOpenFileName(None, 'Open file', 'Pictures', 'Images (*.png *.jpg)')
+        imagePath=fname[0]
+        self.image = QPixmap(imagePath)
         self.UploadedImage.setPixmap(self.image)
+        self.stackedWidget.setCurrentIndex(1) #displays discard and check/scan options 
 
+    #deletes image to select and upload new image
     def discardImage(self):
         self.stackedWidget.setCurrentIndex(0)
         self.UploadedImage.clear()
