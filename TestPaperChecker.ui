@@ -593,7 +593,7 @@
          </item>
         </layout>
        </widget>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="saveAnsKeyBtn">
         <property name="geometry">
          <rect>
           <x>590</x>
@@ -2254,7 +2254,7 @@
   <tabstop>MainTabWidget</tabstop>
   <tabstop>TestNameInp</tabstop>
   <tabstop>AddTestBtn</tabstop>
-  <tabstop>pushButton_4</tabstop>
+  <tabstop>saveAnsKeyBtn</tabstop>
   <tabstop>UploadImageBtn</tabstop>
   <tabstop>AdvancedBtn</tabstop>
   <tabstop>SaveImageBtn</tabstop>
