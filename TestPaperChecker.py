@@ -433,6 +433,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.changeAnswerKeyBtn.setAutoDefault(False)
         self.changeAnswerKeyBtn.setDefault(False)
         self.changeAnswerKeyBtn.setFlat(False)
+        self.changeAnswerKeyBtn.setEnabled(False)
         self.changeAnswerKeyBtn.setObjectName("changeAnswerKeyBtn")
         self.horizontalLayout_3.addWidget(self.changeAnswerKeyBtn)
         self.verticalLayout.addWidget(self.frame_3, 0, QtCore.Qt.AlignHCenter)
@@ -890,9 +891,11 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.saveAnsKeyBtn.setStyleSheet("color: rgb(138, 138, 138);\n"
                                          "background-color: #cccccc;\n"
                                          "font: 12pt \"Arial\";")
+        self.changeAnswerKeyBtn.setEnabled(True)
 
     def changeAnswerKey(self):
         self.saveAnsKeyBtn.setEnabled(True)
+        self.changeAnswerKeyBtn.setEnabled(False)
         self.saveAnsKeyBtn.setStyleSheet("color: rgb(255, 255, 255);\n"
                                          "background-color: rgb(69, 207, 101);\n"
                                          "font: 12pt \"Arial\";")
