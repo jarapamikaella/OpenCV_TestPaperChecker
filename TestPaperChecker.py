@@ -193,17 +193,29 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.AnswerKeyTab.setObjectName("AnswerKeyTab")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.AnswerKeyTab)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.AnswerKeyGuideLabel = QtWidgets.QLabel(self.AnswerKeyTab)
+        self.frame_2 = QtWidgets.QFrame(self.AnswerKeyTab)
+        self.frame_2.setMinimumSize(QtCore.QSize(0, 40))
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.frame_2)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.label_2 = QtWidgets.QLabel(self.frame_2)
         font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
-        self.AnswerKeyGuideLabel.setFont(font)
-        self.AnswerKeyGuideLabel.setStyleSheet("color: rgb(255, 0, 0);")
-        self.AnswerKeyGuideLabel.setObjectName("AnswerKeyGuideLabel")
-        self.verticalLayout.addWidget(self.AnswerKeyGuideLabel, 0, QtCore.Qt.AlignHCenter)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color: rgb(255, 0, 0);")
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout_4.addWidget(self.label_2, 0, 0, 1, 1)
+        self.verticalLayout.addWidget(self.frame_2)
         self.AnsKeyTblFrame = QtWidgets.QFrame(self.AnswerKeyTab)
         self.AnsKeyTblFrame.setObjectName("AnsKeyTblFrame")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.AnsKeyTblFrame)
+        self.verticalLayout_4.setContentsMargins(-1, 14, -1, -1)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.AnsKeyTbl = QtWidgets.QTableWidget(self.AnsKeyTblFrame)
         self.AnsKeyTbl.setMaximumSize(QtCore.QSize(350, 16777215))
@@ -629,12 +641,11 @@ class Ui_TEST_PAPER_CHECKER(object):
 
         #on click function for saving test paper key
         self.saveAnsKeyBtn.clicked.connect(self.saveAddTestAnswerKey)
-    
     def retranslateUi(self, TEST_PAPER_CHECKER):
         _translate = QtCore.QCoreApplication.translate
         TEST_PAPER_CHECKER.setWindowTitle(_translate("TEST_PAPER_CHECKER", "MainWindow"))
         self.label.setText(_translate("TEST_PAPER_CHECKER", "TEST PAPER CHECKER"))
-        self.AnswerKeyGuideLabel.setText(_translate("TEST_PAPER_CHECKER", "Please input the correct Answer Keys for the Test Paper you want to check"))
+        self.label_2.setText(_translate("TEST_PAPER_CHECKER", "Please input the correct Answer Keys for the Test Paper you want to check"))
         item = self.AnsKeyTbl.verticalHeaderItem(0)
         item.setText(_translate("TEST_PAPER_CHECKER", "Item 1"))
         item = self.AnsKeyTbl.verticalHeaderItem(1)
@@ -665,6 +676,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.AdvancedBtn.setText(_translate("TEST_PAPER_CHECKER", "Advanced"))
         self.SaveImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Image"))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.CheckPaperTab), _translate("TEST_PAPER_CHECKER", "     Check Paper     "))
+    
     #opens gallery to select and upload image   
     def browsefiles(self): 
         fname=QFileDialog.getOpenFileName(None, 'Open file', 'Pictures', 'Images (*.png *.jpg)')

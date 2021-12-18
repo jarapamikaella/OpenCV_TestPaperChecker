@@ -497,35 +497,43 @@
         <string>     Answer Keys     </string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
-        <item alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="AnswerKeyGuideLabel">
+        <item>
+         <widget class="QFrame" name="frame_2">
           <property name="minimumSize">
            <size>
             <width>0</width>
             <height>40</height>
            </size>
           </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
           </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 0, 0);</string>
-          </property>
-          <property name="text">
-           <string>Please input the correct Answer Keys for the Test Paper you want to check</string>
-          </property>
-          <property name="margin">
-           <number>0</number>
-          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Please input the correct Answer Keys for the Test Paper you want to check</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
         <item>
