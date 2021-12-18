@@ -818,7 +818,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         # on click function for saving test paper key
         self.saveAnsKeyBtn.clicked.connect(self.saveAddTestAnswerKey)
         self.changeAnswerKeyBtn.clicked.connect(self.changeAnswerKey)
-    
+
     def retranslateUi(self, TEST_PAPER_CHECKER):
         _translate = QtCore.QCoreApplication.translate
         TEST_PAPER_CHECKER.setWindowTitle(_translate("TEST_PAPER_CHECKER", "MainWindow"))
@@ -856,7 +856,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.SaveImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Image"))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.CheckPaperTab), _translate("TEST_PAPER_CHECKER", "     Check Paper     "))
 
-    # opens gallery to select and upload image
+            # opens gallery to select and upload image
     def browsefiles(self):
         fname = QFileDialog.getOpenFileName(
             None, 'Open file', 'Pictures', 'Images (*.png *.jpg)')
@@ -895,6 +895,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.saveAnsKeyBtn.setStyleSheet("color: rgb(255, 255, 255);\n"
                                          "background-color: rgb(69, 207, 101);\n"
                                          "font: 12pt \"Arial\";")
+        self.AnsKeyTbl.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed|QtWidgets.QAbstractItemView.CurrentChanged)
 
 if __name__ == "__main__":
     import sys
