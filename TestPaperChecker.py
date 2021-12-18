@@ -13,7 +13,6 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QDialog, QFileDialog
 from AnsKeyDialog import Ui_AnswerKey
 
-
 class Ui_TEST_PAPER_CHECKER(object):
     def setupUi(self, TEST_PAPER_CHECKER):
         TEST_PAPER_CHECKER.setObjectName("TEST_PAPER_CHECKER")
@@ -213,15 +212,15 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.gridLayout_4.addWidget(self.label_2, 0, 0, 1, 1)
-        self.frame_4 = QtWidgets.QFrame(self.frame_2)
-        self.frame_4.setMinimumSize(QtCore.QSize(0, 400))
-        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_4.setObjectName("frame_4")
-        self.gridLayout_5 = QtWidgets.QGridLayout(self.frame_4)
+        self.tableFrame = QtWidgets.QFrame(self.frame_2)
+        self.tableFrame.setMinimumSize(QtCore.QSize(0, 400))
+        self.tableFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.tableFrame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.tableFrame.setObjectName("tableFrame")
+        self.gridLayout_5 = QtWidgets.QGridLayout(self.tableFrame)
         self.gridLayout_5.setContentsMargins(-1, 9, -1, 0)
         self.gridLayout_5.setObjectName("gridLayout_5")
-        self.AnsKeyTbl = QtWidgets.QTableWidget(self.frame_4)
+        self.AnsKeyTbl = QtWidgets.QTableWidget(self.tableFrame)
         self.AnsKeyTbl.setMaximumSize(QtCore.QSize(300, 16777215))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -261,7 +260,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.AnsKeyTbl.verticalHeader().setCascadingSectionResizes(False)
         self.AnsKeyTbl.verticalHeader().setSortIndicatorShown(False)
         self.gridLayout_5.addWidget(self.AnsKeyTbl, 0, 0, 1, 1)
-        self.gridLayout_4.addWidget(self.frame_4, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.tableFrame, 1, 0, 1, 1)
         self.verticalLayout.addWidget(self.frame_2)
         self.frame_3 = QtWidgets.QFrame(self.AnswerKeyTab)
         self.frame_3.setMinimumSize(QtCore.QSize(0, 50))
@@ -413,18 +412,19 @@ class Ui_TEST_PAPER_CHECKER(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
         self.saveAnsKeyBtn.setPalette(palette)
         self.saveAnsKeyBtn.setAutoFillBackground(True)
-        self.saveAnsKeyBtn.setStyleSheet("color: rgb(255, 255, 255);")
+        self.saveAnsKeyBtn.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 12pt \"Arial\";")
         self.saveAnsKeyBtn.setFlat(True)
         self.saveAnsKeyBtn.setObjectName("saveAnsKeyBtn")
         self.horizontalLayout_3.addWidget(self.saveAnsKeyBtn)
-        self.pushButton = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton.setMinimumSize(QtCore.QSize(180, 0))
-        self.pushButton.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.pushButton.setAutoDefault(False)
-        self.pushButton.setDefault(False)
-        self.pushButton.setFlat(False)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_3.addWidget(self.pushButton)
+        self.changeAnswerKeyBtn = QtWidgets.QPushButton(self.frame_3)
+        self.changeAnswerKeyBtn.setMinimumSize(QtCore.QSize(180, 0))
+        self.changeAnswerKeyBtn.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.changeAnswerKeyBtn.setAutoDefault(False)
+        self.changeAnswerKeyBtn.setDefault(False)
+        self.changeAnswerKeyBtn.setFlat(False)
+        self.changeAnswerKeyBtn.setObjectName("changeAnswerKeyBtn")
+        self.horizontalLayout_3.addWidget(self.changeAnswerKeyBtn)
         self.verticalLayout.addWidget(self.frame_3, 0, QtCore.Qt.AlignHCenter)
         self.MainTabWidget.addTab(self.AnswerKeyTab, "")
         self.CheckPaperTab = QtWidgets.QWidget()
@@ -797,15 +797,14 @@ class Ui_TEST_PAPER_CHECKER(object):
         TEST_PAPER_CHECKER.setTabOrder(self.MainTabWidget, self.UploadImageBtn)
         TEST_PAPER_CHECKER.setTabOrder(self.UploadImageBtn, self.AdvancedBtn)
         TEST_PAPER_CHECKER.setTabOrder(self.AdvancedBtn, self.SaveImageBtn)
-
- # functions for clicking buttons
+    # functions for clicking buttons
         self.UploadImageBtn.clicked.connect(self.browsefiles) #on click function for upload
         self.DiscardBtn.clicked.connect(self.discardImage)    #on click function for discard
         self.CheckScanBtn.clicked.connect(self.check_Scan_Image)
 
         #on click function for saving test paper key
         self.saveAnsKeyBtn.clicked.connect(self.saveAddTestAnswerKey)
-    
+
     def retranslateUi(self, TEST_PAPER_CHECKER):
         _translate = QtCore.QCoreApplication.translate
         TEST_PAPER_CHECKER.setWindowTitle(_translate("TEST_PAPER_CHECKER", "MainWindow"))
@@ -834,7 +833,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         item = self.AnsKeyTbl.horizontalHeaderItem(0)
         item.setText(_translate("TEST_PAPER_CHECKER", "Correct Answer"))
         self.saveAnsKeyBtn.setText(_translate("TEST_PAPER_CHECKER", "Save"))
-        self.pushButton.setText(_translate("TEST_PAPER_CHECKER", "Change Answer Key"))
+        self.changeAnswerKeyBtn.setText(_translate("TEST_PAPER_CHECKER", "Change Answer Key"))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.AnswerKeyTab), _translate("TEST_PAPER_CHECKER", "     Answer Keys     "))
         self.UploadImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Upload Image"))
         self.DiscardBtn.setText(_translate("TEST_PAPER_CHECKER", "Discard"))
