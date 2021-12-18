@@ -883,6 +883,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.ui = Ui_AnswerKey()
         self.ui.setupUi(self.window)
         self.window.show()
+        QtCore.QTimer.singleShot(4000, self.window.close)
         self.saveAnsKeyBtn.setEnabled(False)
         self.AnsKeyTbl.setEditTriggers(
             QtWidgets.QAbstractItemView.NoEditTriggers)
