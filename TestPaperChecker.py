@@ -16,7 +16,7 @@ from AnsKeyDialog import Ui_AnswerKey
 class Ui_TEST_PAPER_CHECKER(object):
     def setupUi(self, TEST_PAPER_CHECKER):
         TEST_PAPER_CHECKER.setObjectName("TEST_PAPER_CHECKER")
-        TEST_PAPER_CHECKER.resize(810, 602)
+        TEST_PAPER_CHECKER.setFixedSize(QSize(810, 602))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -428,7 +428,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.changeAnswerKeyBtn.setMinimumSize(QtCore.QSize(180, 0))
         self.changeAnswerKeyBtn.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.changeAnswerKeyBtn.setAutoFillBackground(False)
-        self.changeAnswerKeyBtn.setStyleSheet("background-color: rgb(225, 225, 225);")
+        self.changeAnswerKeyBtn.setStyleSheet("background-color: rgb(225, 225, 225);\n"
+"font: 12pt \"Arial\";")
         self.changeAnswerKeyBtn.setAutoDefault(False)
         self.changeAnswerKeyBtn.setDefault(False)
         self.changeAnswerKeyBtn.setFlat(False)
@@ -817,6 +818,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         # on click function for saving test paper key
         self.saveAnsKeyBtn.clicked.connect(self.saveAddTestAnswerKey)
         self.changeAnswerKeyBtn.clicked.connect(self.changeAnswerKey)
+    
     def retranslateUi(self, TEST_PAPER_CHECKER):
         _translate = QtCore.QCoreApplication.translate
         TEST_PAPER_CHECKER.setWindowTitle(_translate("TEST_PAPER_CHECKER", "MainWindow"))
@@ -853,7 +855,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.AdvancedBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Score"))
         self.SaveImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Image"))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.CheckPaperTab), _translate("TEST_PAPER_CHECKER", "     Check Paper     "))
-# opens gallery to select and upload image
+
+    # opens gallery to select and upload image
     def browsefiles(self):
         fname = QFileDialog.getOpenFileName(
             None, 'Open file', 'Pictures', 'Images (*.png *.jpg)')
@@ -883,8 +886,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.saveAnsKeyBtn.setEnabled(False)
         self.AnsKeyTbl.setEditTriggers(
             QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.saveAnsKeyBtn.setStyleSheet("color: rgb(255, 255, 255);\n"
-                                         "background-color: #e1e1e1;\n"
+        self.saveAnsKeyBtn.setStyleSheet("color: rgb(138, 138, 138);\n"
+                                         "background-color: #cccccc;\n"
                                          "font: 12pt \"Arial\";")
 
     def changeAnswerKey(self):
