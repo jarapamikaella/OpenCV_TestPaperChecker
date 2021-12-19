@@ -786,12 +786,12 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.frame.setObjectName("frame")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.AdvancedBtn = QtWidgets.QPushButton(self.frame)
-        self.AdvancedBtn.setEnabled(False)
-        self.AdvancedBtn.setMinimumSize(QtCore.QSize(160, 0))
-        self.AdvancedBtn.setMaximumSize(QtCore.QSize(250, 16777215))
-        self.AdvancedBtn.setObjectName("AdvancedBtn")
-        self.horizontalLayout_4.addWidget(self.AdvancedBtn)
+        self.CheckNewPaperBtn = QtWidgets.QPushButton(self.frame)
+        self.CheckNewPaperBtn.setEnabled(False)
+        self.CheckNewPaperBtn.setMinimumSize(QtCore.QSize(160, 0))
+        self.CheckNewPaperBtn.setMaximumSize(QtCore.QSize(250, 16777215))
+        self.CheckNewPaperBtn.setObjectName("CheckNewPaperBtn")
+        self.horizontalLayout_4.addWidget(self.CheckNewPaperBtn)
         self.SaveImageBtn = QtWidgets.QPushButton(self.frame)
         self.SaveImageBtn.setEnabled(False)
         self.SaveImageBtn.setMinimumSize(QtCore.QSize(160, 0))
@@ -810,8 +810,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(TEST_PAPER_CHECKER)
         TEST_PAPER_CHECKER.setTabOrder(self.MainTabWidget, self.UploadImageBtn)
-        TEST_PAPER_CHECKER.setTabOrder(self.UploadImageBtn, self.AdvancedBtn)
-        TEST_PAPER_CHECKER.setTabOrder(self.AdvancedBtn, self.SaveImageBtn)
+        TEST_PAPER_CHECKER.setTabOrder(self.UploadImageBtn, self.CheckNewPaperBtn)
+        TEST_PAPER_CHECKER.setTabOrder(self.CheckNewPaperBtn, self.SaveImageBtn)
 
         # functions for clicking buttons
         self.UploadImageBtn.clicked.connect(
@@ -823,6 +823,9 @@ class Ui_TEST_PAPER_CHECKER(object):
         # on click function for saving test paper key
         self.saveAnsKeyBtn.clicked.connect(self.saveAddTestAnswerKey)
         self.changeAnswerKeyBtn.clicked.connect(self.changeAnswerKey)
+
+        #on click function for checking new test paper
+        self.CheckNewPaperBtn.clicked.connect(self.checkNewPaper)
 
     def retranslateUi(self, TEST_PAPER_CHECKER):
         _translate = QtCore.QCoreApplication.translate
@@ -857,7 +860,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.UploadImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Upload Image"))
         self.DiscardBtn.setText(_translate("TEST_PAPER_CHECKER", "Discard"))
         self.CheckScanBtn.setText(_translate("TEST_PAPER_CHECKER", "Check/Scan"))
-        self.AdvancedBtn.setText(_translate("TEST_PAPER_CHECKER", "Advanced"))
+        self.CheckNewPaperBtn.setText(_translate("TEST_PAPER_CHECKER", "Check New Paper"))
         self.SaveImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Image"))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.CheckPaperTab), _translate("TEST_PAPER_CHECKER", "     Check Paper     "))
 
@@ -879,8 +882,20 @@ class Ui_TEST_PAPER_CHECKER(object):
     def check_Scan_Image(self):
         self.image = QPixmap("test_paper.jpg")
         self.CheckedImage.setPixmap(self.image)
-        self.AdvancedBtn.setEnabled(True)
+        self.CheckNewPaperBtn.setEnabled(True)
         self.SaveImageBtn.setEnabled(True)
+        self.DiscardBtn.setEnabled(False)
+        self.CheckScanBtn.setEnabled(False)
+
+    # function for checking new paper
+    def checkNewPaper(self):
+        self.stackedWidget.setCurrentIndex(0)
+        self.DiscardBtn.setEnabled(True)
+        self.CheckScanBtn.setEnabled(True)
+        self.CheckNewPaperBtn.setEnabled(False)
+        self.SaveImageBtn.setEnabled(False)
+        self.UploadedImage.clear()
+        self.CheckedImage.clear()
 
     def saveAddTestAnswerKey(self):
         # instance of Ui_AnswerKey dialog box
