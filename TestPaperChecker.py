@@ -858,7 +858,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.SaveImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Image"))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.CheckPaperTab), _translate("TEST_PAPER_CHECKER", "     Check Paper     "))
 
-            # opens gallery to select and upload image
+    # opens gallery to select and upload image
     def browsefiles(self):
         fname = QFileDialog.getOpenFileName(
             None, 'Open file', 'Pictures', 'Images (*.png *.jpg)')
@@ -897,20 +897,21 @@ class Ui_TEST_PAPER_CHECKER(object):
         #loop values in table  
         rowCount=self.AnsKeyTbl.rowCount();
         columnCount=self.AnsKeyTbl.columnCount();
+        rowData=[]
         for row in range(rowCount):
-            rowData=[]
             for column in range(columnCount):
                 widgetItem=self.AnsKeyTbl.item(row,column)
                 if(widgetItem and widgetItem.text):
                     rowData.append(widgetItem.text())
                 else:
                     rowData.append('NULL')
-            self.file_save(rowData)
+        self.file_save(rowData)
 
     #writes in txt file
     def file_save(self, rowData):
-        f = open('answerkey.txt', 'a')
-        f.write(str(rowData))
+        f = open('answerkey.txt', 'w')
+        for data in rowData:
+            f.write(str(data)+'\n')
         f.close()
 
     def changeAnswerKey(self):
