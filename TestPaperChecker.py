@@ -215,7 +215,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.gridLayout_4.addWidget(self.label_2, 0, 0, 1, 1)
         self.tableFrame = QtWidgets.QFrame(self.frame_2)
         self.tableFrame.setMinimumSize(QtCore.QSize(0, 400))
-        self.tableFrame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.tableFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.tableFrame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.tableFrame.setObjectName("tableFrame")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.tableFrame)
@@ -226,12 +226,9 @@ class Ui_TEST_PAPER_CHECKER(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.AnsKeyTbl.setFont(font)
-        self.AnsKeyTbl.setFrameShape(QtWidgets.QFrame.Box)
-        self.AnsKeyTbl.setFrameShadow(QtWidgets.QFrame.Plain)
         self.AnsKeyTbl.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.AnsKeyTbl.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.AnsKeyTbl.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed|QtWidgets.QAbstractItemView.CurrentChanged)
-        self.AnsKeyTbl.setSelectionMode(QtWidgets.QAbstractItemView.ExtendedSelection)
+        self.AnsKeyTbl.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed|QtWidgets.QAbstractItemView.CurrentChanged|QtWidgets.QAbstractItemView.EditKeyPressed)
         self.AnsKeyTbl.setShowGrid(True)
         self.AnsKeyTbl.setCornerButtonEnabled(True)
         self.AnsKeyTbl.setObjectName("AnsKeyTbl")
@@ -420,8 +417,6 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.saveAnsKeyBtn.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(69, 207, 101);\n"
 "font: 12pt \"Arial\";")
-        self.saveAnsKeyBtn.setAutoDefault(False)
-        self.saveAnsKeyBtn.setDefault(False)
         self.saveAnsKeyBtn.setFlat(False)
         self.saveAnsKeyBtn.setObjectName("saveAnsKeyBtn")
         self.horizontalLayout_3.addWidget(self.saveAnsKeyBtn)
@@ -434,7 +429,6 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.changeAnswerKeyBtn.setAutoDefault(False)
         self.changeAnswerKeyBtn.setDefault(False)
         self.changeAnswerKeyBtn.setFlat(False)
-        self.changeAnswerKeyBtn.setEnabled(False)
         self.changeAnswerKeyBtn.setObjectName("changeAnswerKeyBtn")
         self.horizontalLayout_3.addWidget(self.changeAnswerKeyBtn)
         self.verticalLayout.addWidget(self.frame_3, 0, QtCore.Qt.AlignHCenter)
@@ -597,6 +591,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.UploadedImage.setPalette(palette)
         self.UploadedImage.setAutoFillBackground(True)
         self.UploadedImage.setText("")
+        self.UploadedImage.setScaledContents(True)
+        self.UploadedImage.setAlignment(QtCore.Qt.AlignCenter)
         self.UploadedImage.setObjectName("UploadedImage")
         self.gridLayout_3.addWidget(self.UploadedImage, 0, 0, 1, 1)
         self.stackedWidget = QtWidgets.QStackedWidget(self.UploadImageFrame)
@@ -803,7 +799,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         TEST_PAPER_CHECKER.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(TEST_PAPER_CHECKER)
-        self.MainTabWidget.setCurrentIndex(0)
+        self.MainTabWidget.setCurrentIndex(1)
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(TEST_PAPER_CHECKER)
         TEST_PAPER_CHECKER.setTabOrder(self.MainTabWidget, self.UploadImageBtn)
@@ -854,9 +850,10 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.UploadImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Upload Image"))
         self.DiscardBtn.setText(_translate("TEST_PAPER_CHECKER", "Discard"))
         self.CheckScanBtn.setText(_translate("TEST_PAPER_CHECKER", "Check/Scan"))
-        self.AdvancedBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Score"))
+        self.AdvancedBtn.setText(_translate("TEST_PAPER_CHECKER", "Advanced"))
         self.SaveImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Image"))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.CheckPaperTab), _translate("TEST_PAPER_CHECKER", "     Check Paper     "))
+
 
     # opens gallery to select and upload image
     def browsefiles(self):
