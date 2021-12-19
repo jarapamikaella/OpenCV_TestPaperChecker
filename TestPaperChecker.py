@@ -12,6 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QDialog, QFileDialog
 from AnsKeyDialog import Ui_AnswerKey
+import os
 
 class Ui_TEST_PAPER_CHECKER(object):
     def setupUi(self, TEST_PAPER_CHECKER):
@@ -900,6 +901,11 @@ class Ui_TEST_PAPER_CHECKER(object):
                                          "background-color: rgb(69, 207, 101);\n"
                                          "font: 12pt \"Arial\";")
         self.AnsKeyTbl.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed|QtWidgets.QAbstractItemView.CurrentChanged)
+        self.AnsKeyTbl.clearContents()
+        if os.path.exists("answerkey.txt"):
+            os.remove("answerkey.txt")
+        else:
+            self.file_save()
 
 if __name__ == "__main__":
     import sys
