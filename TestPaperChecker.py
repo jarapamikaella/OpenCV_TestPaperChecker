@@ -806,7 +806,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         TEST_PAPER_CHECKER.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(TEST_PAPER_CHECKER)
-        self.MainTabWidget.setCurrentIndex(1)
+        self.MainTabWidget.setCurrentIndex(0)
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(TEST_PAPER_CHECKER)
         TEST_PAPER_CHECKER.setTabOrder(self.MainTabWidget, self.UploadImageBtn)
