@@ -451,7 +451,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.UploadedImage = QtWidgets.QLabel(self.UploadImageFrame)
         self.UploadedImage.setMinimumSize(QtCore.QSize(0, 0))
-        self.UploadedImage.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.UploadedImage.setMaximumSize(QtCore.QSize(350, 16777215))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -629,8 +629,13 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.gridLayout_2 = QtWidgets.QGridLayout(self.CheckedImageFrame)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.CheckedImage = QtWidgets.QLabel(self.CheckedImageFrame)
-        self.CheckedImage.setMinimumSize(QtCore.QSize(0, 0))
-        self.CheckedImage.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.CheckedImage.sizePolicy().hasHeightForWidth())
+        self.CheckedImage.setSizePolicy(sizePolicy)
+        self.CheckedImage.setMinimumSize(QtCore.QSize(250, 0))
+        self.CheckedImage.setMaximumSize(QtCore.QSize(360, 16777215))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -856,7 +861,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.SaveImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Image"))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.CheckPaperTab), _translate("TEST_PAPER_CHECKER", "     Check Paper     "))
 
-        # opens gallery to select and upload image
+       # opens gallery to select and upload image
     def browsefiles(self):
         fname = QFileDialog.getOpenFileName(
             None, 'Open file', 'Pictures', 'Images (*.png *.jpg)')
