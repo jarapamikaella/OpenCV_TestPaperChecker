@@ -12,6 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QDialog, QFileDialog
 from AnsKeyDialog import Ui_AnswerKey
+from PyQt5.QtGui import QIcon
 import os
 
 class Ui_TEST_PAPER_CHECKER(object):
@@ -829,7 +830,8 @@ class Ui_TEST_PAPER_CHECKER(object):
 
     def retranslateUi(self, TEST_PAPER_CHECKER):
         _translate = QtCore.QCoreApplication.translate
-        TEST_PAPER_CHECKER.setWindowTitle(_translate("TEST_PAPER_CHECKER", "MainWindow"))
+        TEST_PAPER_CHECKER.setWindowTitle(_translate("TEST_PAPER_CHECKER", "Test Paper Checker"))
+        TEST_PAPER_CHECKER.setWindowIcon(QtGui.QIcon('logo.png'))
         self.label.setText(_translate("TEST_PAPER_CHECKER", "TEST PAPER CHECKER"))
         self.label_2.setText(_translate("TEST_PAPER_CHECKER", "Please input the correct Answer Keys for the Test Paper you want to check"))
         item = self.AnsKeyTbl.verticalHeaderItem(0)
