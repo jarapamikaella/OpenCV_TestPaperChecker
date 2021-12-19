@@ -894,6 +894,25 @@ class Ui_TEST_PAPER_CHECKER(object):
                                          "font: 12pt \"Arial\";")
         self.changeAnswerKeyBtn.setEnabled(True)
 
+        #loop values in table  
+        rowCount=self.AnsKeyTbl.rowCount();
+        columnCount=self.AnsKeyTbl.columnCount();
+        for row in range(rowCount):
+            rowData=[]
+            for column in range(columnCount):
+                widgetItem=self.AnsKeyTbl.item(row,column)
+                if(widgetItem and widgetItem.text):
+                    rowData.append(widgetItem.text())
+                else:
+                    rowData.append('NULL')
+            self.file_save(rowData)
+
+    #writes in txt file
+    def file_save(self, rowData):
+        f = open('answerkey.txt', 'a')
+        f.write(str(rowData))
+        f.close()
+
     def changeAnswerKey(self):
         self.saveAnsKeyBtn.setEnabled(True)
         self.changeAnswerKeyBtn.setEnabled(False)
