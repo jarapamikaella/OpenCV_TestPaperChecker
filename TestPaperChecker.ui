@@ -1633,6 +1633,15 @@ font: 12pt &quot;Arial&quot;;</string>
                 <property name="text">
                  <string/>
                 </property>
+                <property name="pixmap">
+                 <pixmap>../../Downloads/test_paper.jpg</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
                </widget>
               </item>
               <item row="1" column="0">
