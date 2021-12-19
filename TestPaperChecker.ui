@@ -484,7 +484,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -2178,7 +2178,7 @@ font: 12pt &quot;Arial&quot;;</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_4">
                  <item>
-                  <widget class="QPushButton" name="AdvancedBtn">
+                  <widget class="QPushButton" name="CheckNewPaperBtn">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
@@ -2195,7 +2195,7 @@ font: 12pt &quot;Arial&quot;;</string>
                     </size>
                    </property>
                    <property name="text">
-                    <string>Advanced</string>
+                    <string>Check New Paper</string>
                    </property>
                   </widget>
                  </item>
@@ -2240,7 +2240,7 @@ font: 12pt &quot;Arial&quot;;</string>
  <tabstops>
   <tabstop>MainTabWidget</tabstop>
   <tabstop>UploadImageBtn</tabstop>
-  <tabstop>AdvancedBtn</tabstop>
+  <tabstop>CheckNewPaperBtn</tabstop>
   <tabstop>SaveImageBtn</tabstop>
  </tabstops>
  <resources/>
