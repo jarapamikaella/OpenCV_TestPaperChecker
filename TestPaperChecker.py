@@ -770,6 +770,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.CheckedImage.setPalette(palette)
         self.CheckedImage.setAutoFillBackground(True)
         self.CheckedImage.setText("")
+        self.CheckedImage.setScaledContents(True)
+        self.CheckedImage.setAlignment(QtCore.Qt.AlignCenter)
         self.CheckedImage.setObjectName("CheckedImage")
         self.gridLayout_2.addWidget(self.CheckedImage, 0, 0, 1, 2)
         self.frame = QtWidgets.QFrame(self.CheckedImageFrame)
@@ -854,8 +856,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.SaveImageBtn.setText(_translate("TEST_PAPER_CHECKER", "Save Image"))
         self.MainTabWidget.setTabText(self.MainTabWidget.indexOf(self.CheckPaperTab), _translate("TEST_PAPER_CHECKER", "     Check Paper     "))
 
-
-    # opens gallery to select and upload image
+        # opens gallery to select and upload image
     def browsefiles(self):
         fname = QFileDialog.getOpenFileName(
             None, 'Open file', 'Pictures', 'Images (*.png *.jpg)')
@@ -871,7 +872,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.UploadedImage.clear()
 
     def check_Scan_Image(self):
-        self.image = QPixmap("testPaper1.png")
+        self.image = QPixmap("test_paper.jpg")
         self.CheckedImage.setPixmap(self.image)
         self.AdvancedBtn.setEnabled(True)
         self.SaveImageBtn.setEnabled(True)
