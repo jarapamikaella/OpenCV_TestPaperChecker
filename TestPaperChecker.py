@@ -968,7 +968,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.homePageImage.setGeometry(QtCore.QRect(-12, -10, 841, 631))
         self.homePageImage.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.homePageImage.setText("")
-        self.homePageImage.setPixmap(QtGui.QPixmap("../../Downloads/TestPaperHomePage.png"))
+        self.homePageImage.setPixmap(QtGui.QPixmap("TestPaperHomePage.png"))
         self.homePageImage.setScaledContents(True)
         self.homePageImage.setAlignment(QtCore.Qt.AlignCenter)
         self.homePageImage.setObjectName("homePageImage")
