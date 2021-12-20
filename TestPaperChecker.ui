@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>846</width>
-    <height>638</height>
+    <width>828</width>
+    <height>620</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -1644,8 +1644,8 @@ font: 12pt &quot;Arial&quot;;</string>
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <layout class="QHBoxLayout" name="horizontalLayout">
-               <item>
+              <layout class="QGridLayout" name="gridLayout_8">
+               <item row="0" column="0">
                 <widget class="QFrame" name="UploadImageFrame">
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
@@ -2160,8 +2160,14 @@ font: 12pt &quot;Arial&quot;;</string>
                  </layout>
                 </widget>
                </item>
-               <item alignment="Qt::AlignHCenter">
+               <item row="0" column="1">
                 <widget class="QFrame" name="CheckedImageFrame">
+                 <property name="minimumSize">
+                  <size>
+                   <width>380</width>
+                   <height>0</height>
+                  </size>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
                  </property>
@@ -2618,7 +2624,7 @@ font: 12pt &quot;Arial&quot;;</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="1" column="0">
+                  <item row="1" column="0" colspan="2">
                    <widget class="QFrame" name="frame">
                     <property name="maximumSize">
                      <size>
@@ -2633,29 +2639,7 @@ font: 12pt &quot;Arial&quot;;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_4">
-                     <item>
-                      <widget class="QPushButton" name="CheckNewPaperBtn">
-                       <property name="enabled">
-                        <bool>false</bool>
-                       </property>
-                       <property name="minimumSize">
-                        <size>
-                         <width>160</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>250</width>
-                         <height>16777215</height>
-                        </size>
-                       </property>
-                       <property name="text">
-                        <string>Check New Paper</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
+                     <item alignment="Qt::AlignHCenter">
                       <widget class="QPushButton" name="SaveImageBtn">
                        <property name="enabled">
                         <bool>false</bool>
@@ -2693,30 +2677,59 @@ font: 12pt &quot;Arial&quot;;</string>
        </layout>
       </widget>
       <widget class="QWidget" name="page_2">
-       <layout class="QGridLayout" name="gridLayout_8">
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap>../../Downloads/homepage.png</pixmap>
-          </property>
-          <property name="scaledContents">
-           <bool>true</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QLabel" name="homePageImage">
+        <property name="geometry">
+         <rect>
+          <x>-12</x>
+          <y>-10</y>
+          <width>841</width>
+          <height>631</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../Downloads/TestPaperHomePage.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QCommandLinkButton" name="getStartedBtn">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>510</y>
+          <width>131</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <weight>75</weight>
+          <bold>true</bold>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>Get Started</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../Downloads/logo.png</normaloff>../../Downloads/logo.png</iconset>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -2725,7 +2738,6 @@ font: 12pt &quot;Arial&quot;;</string>
  </widget>
  <tabstops>
   <tabstop>UploadImageBtn</tabstop>
-  <tabstop>CheckNewPaperBtn</tabstop>
   <tabstop>SaveImageBtn</tabstop>
  </tabstops>
  <resources/>
