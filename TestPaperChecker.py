@@ -965,7 +965,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
         self.homePageImage = QtWidgets.QLabel(self.page_2)
-        self.homePageImage.setGeometry(QtCore.QRect(9, 9, 810, 602))
+        self.homePageImage.setGeometry(QtCore.QRect(-12, -10, 841, 631))
         self.homePageImage.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.homePageImage.setText("")
         self.homePageImage.setPixmap(QtGui.QPixmap("../../Downloads/TestPaperHomePage.png"))
@@ -994,6 +994,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(TEST_PAPER_CHECKER)
         TEST_PAPER_CHECKER.setTabOrder(self.UploadImageBtn, self.SaveImageBtn)
+        
         # functions for clicking buttons
         self.UploadImageBtn.clicked.connect(
             self.browsefiles)  # on click function for upload
