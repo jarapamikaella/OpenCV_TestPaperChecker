@@ -1237,7 +1237,6 @@ class Ui_TEST_PAPER_CHECKER(object):
         # image processing
         self.output = self.process()
         self.CheckedImage.setPixmap(self.output)
-        self.AdvancedBtn.setEnabled(True)
         self.SaveImageBtn.setEnabled(True)
 
     def saveAddTestAnswerKey(self):
