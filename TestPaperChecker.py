@@ -981,7 +981,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         font.setWeight(75)
         self.getStartedBtn.setFont(font)
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../Downloads/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.getStartedBtn.setIcon(icon1)
         self.getStartedBtn.setObjectName("getStartedBtn")
         self.stackedWidget_2.addWidget(self.page_2)
