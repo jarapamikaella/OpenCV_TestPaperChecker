@@ -1230,13 +1230,15 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.image = QPixmap(imagePath)
         self.UploadedImage.setPixmap(self.image)
         # displays discard and check/scan options
-        self.stackedWidget.setCurrentIndex(1)
+        if(imagePath):
+            self.stackedWidget.setCurrentIndex(1)
 
     # deletes image to select and upload new image
     def discardImage(self):
         self.stackedWidget.setCurrentIndex(0)
         self.UploadedImage.clear()
         self.CheckedImage.clear()
+        self.SaveImageBtn.setEnabled(False)
 
     def check_Scan_Image(self):
         # image processing
