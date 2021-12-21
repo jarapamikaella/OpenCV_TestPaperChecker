@@ -18,6 +18,8 @@ import numpy as np
 from imutils import contours
 import imutils
 import copy
+import PIL
+from PIL import ImageQt
 
 class Ui_TEST_PAPER_CHECKER(object):
     possibleAnswer_Key = {'a': 0, 'b':1, 'c':2, 'd': 3, 'e':4, 'f':5, 'g': 6, 
@@ -996,8 +998,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         TEST_PAPER_CHECKER.setTabOrder(self.UploadImageBtn, self.SaveImageBtn)
         
         # functions for clicking buttons
-        self.UploadImageBtn.clicked.connect(
-            self.browsefiles)  # on click function for upload
+        self.UploadImageBtn.clicked.connect(self.browsefiles)  # on click function for upload
         # on click function for discard
         self.DiscardBtn.clicked.connect(self.discardImage)
         self.CheckScanBtn.clicked.connect(self.check_Scan_Image)
@@ -1009,6 +1010,9 @@ class Ui_TEST_PAPER_CHECKER(object):
         #on click get started 
         self.getStartedBtn.clicked.connect(lambda: self.stackedWidget_2.setCurrentIndex(0))
     
+        #on click Save Checked Image
+        self.SaveImageBtn.clicked.connect(self.save_image)
+
     def retranslateUi(self, TEST_PAPER_CHECKER):
         _translate = QtCore.QCoreApplication.translate
         TEST_PAPER_CHECKER.setWindowTitle(_translate("TEST_PAPER_CHECKER", "Test Paper Checker"))
@@ -1106,7 +1110,7 @@ class Ui_TEST_PAPER_CHECKER(object):
                  list.append(val.lower())
 
         answer = self.normalize(list, self.possibleAnswer_Key)
-        print(len(answer))
+        #print(len(answer))
         correctAnswer = 0
 
         #image processing
@@ -1142,7 +1146,7 @@ class Ui_TEST_PAPER_CHECKER(object):
             cnts = contours.sort_contours(questionCnts[i:i + col])[0]
             count = 0
             bubbles = []
-            print(col, q)
+            #print(col, q)
             correct = answer[q]
 
 
@@ -1159,7 +1163,7 @@ class Ui_TEST_PAPER_CHECKER(object):
                 # saves the current bubbles of a row
                 bubbles.append([j, c, total, area])
                 # if the total is greater than the area or greatear than the minimum shade, then it considered the shaded bubble
-                minimumShade = area * 0.65
+                minimumShade = area * 0.63
                 if total > area or total >= minimumShade:
                     count = count + 1
                     minimumAcceptedShade = area * 1
@@ -1190,7 +1194,7 @@ class Ui_TEST_PAPER_CHECKER(object):
   
         # org
         #org = (img_resize.shape[1], 500)
-        print(img_resize.shape[1])
+        #print(img_resize.shape[1])
         org = (450, 100)
   
         # fontScale
@@ -1286,6 +1290,12 @@ class Ui_TEST_PAPER_CHECKER(object):
             os.remove("answerkey.txt")
         else:
             self.file_save()
+
+# save checked image to directory
+    def save_image(self):
+        fileName, _ = QFileDialog.getSaveFileName(None, "Save Checked Paper", r"..\OpenCV_TestPaperChecker", "Images (*.jpg)")
+        img=ImageQt.fromqpixmap(self.CheckedImage.pixmap())
+        img.save(fileName)
 
 if __name__ == "__main__":
     import sys
