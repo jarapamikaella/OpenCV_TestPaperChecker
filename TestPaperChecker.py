@@ -1239,12 +1239,14 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.UploadedImage.clear()
         self.CheckedImage.clear()
         self.SaveImageBtn.setEnabled(False)
+        self.CheckScanBtn.setEnabled(True)
 
     def check_Scan_Image(self):
         # image processing
         self.output = self.process()
         self.CheckedImage.setPixmap(self.output)
         self.SaveImageBtn.setEnabled(True)
+        self.CheckScanBtn.setEnabled(False)
 
     def saveAddTestAnswerKey(self):
         # instance of Ui_AnswerKey dialog box
