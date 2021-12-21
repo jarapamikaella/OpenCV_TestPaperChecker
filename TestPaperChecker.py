@@ -12,6 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QImage, QPixmap, QColor, QPainter
 from PyQt5.QtWidgets import QDialog, QFileDialog
 from AnsKeyDialog import Ui_AnswerKey
+from SaveCheckedPaper import Ui_Dialog
 import os
 import cv2 as cv 
 import numpy as np
@@ -1249,7 +1250,7 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.ui = Ui_AnswerKey()
         self.ui.setupUi(self.window)
         self.window.show()
-        QtCore.QTimer.singleShot(4000, self.window.close)
+        QtCore.QTimer.singleShot(3000, self.window.close)
         self.saveAnsKeyBtn.setEnabled(False)
         self.AnsKeyTbl.setEditTriggers(
             QtWidgets.QAbstractItemView.NoEditTriggers)
@@ -1296,6 +1297,11 @@ class Ui_TEST_PAPER_CHECKER(object):
         fileName, _ = QFileDialog.getSaveFileName(None, "Save Checked Paper", r"..\OpenCV_TestPaperChecker", "Images (*.jpg)")
         img=ImageQt.fromqpixmap(self.CheckedImage.pixmap())
         img.save(fileName)
+        self.window = QtWidgets.QDialog()
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self.window)
+        self.window.show()
+        QtCore.QTimer.singleShot(3000, self.window.close)
 
 if __name__ == "__main__":
     import sys
