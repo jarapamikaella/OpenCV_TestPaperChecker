@@ -1135,6 +1135,8 @@ class Ui_TEST_PAPER_CHECKER(object):
                             for bubble in bubbles:
                                 if bubble[2] >= bubble[3] or bubble[2] >= bubble[3] * minimumShade:
                                     cv.drawContours(output, [bubble[1]], -1, (0, 0, 255), 2)
+                                    if correct == bubble[0]:
+                                        correctAnswer = correctAnswer - 1
                         else:
                             # mark green if the shaded answer is correct
                             if correct == j:
