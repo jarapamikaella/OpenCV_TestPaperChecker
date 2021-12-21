@@ -1260,8 +1260,8 @@ class Ui_TEST_PAPER_CHECKER(object):
         self.changeAnswerKeyBtn.setEnabled(True)
 
         #loop values in table  
-        rowCount=self.AnsKeyTbl.rowCount();
-        columnCount=self.AnsKeyTbl.columnCount();
+        rowCount=self.AnsKeyTbl.rowCount()
+        columnCount=self.AnsKeyTbl.columnCount()
         rowData=[]
         for row in range(rowCount):
             for column in range(columnCount):
